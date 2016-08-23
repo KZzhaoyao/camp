@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Jquery遮罩层</title>
+  
+  <style type="text/css">      
+      #BgDiv{
+        background-color:#e3e3e3; 
+        position:absolute; 
+        z-index:99; 
+        left:0; 
+        top:0; 
+        display:none; 
+        width:100%; 
+        height:1000px;
+        opacity:0.5;
+        filter: alpha(opacity=50);
+        -moz-opacity: 0.5;
+      }
+      
+      #DialogDiv{
+        position:absolute;
+        width:400px; 
+        height:400px;
+        left:50%; 
+        top:50%; 
+        margin-left:-200px;
+        z-index:100;
+        background-color:#fff; 
+        border:1px #8FA4F5 solid; 
+        padding:1px;
+      }
+
+  </style>
+  
+<script type="text/javascript" src="./jquery-2.2.1.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $('#btnShow').on('click', function() {
+      $("#BgDiv").css({ display: "block", height: $(document).height() });
+          $("#DialogDiv").css("top", "100px");
+          $("#DialogDiv").css("display", "block");
+    });
+
+  });
+
+ </script>
+  
+ </head>
+ 
+<body>
+
+  <div id="BgDiv"></div>
+  <div id="DialogDiv" style="display:none">
+  <p>我是模态框</p>
+  <p>在本教程中，您将通过教程以及许多在线实例，学到如何通过使用 jQuery 应用 JavaScript 效果。
+jQuery 是一个“写的更少，但做的更多”的轻量级 JavaScript 库。
+基本上，您将学习到如何选取 HTML 元素，以及如何对它们执行类似隐藏、移动以及操作其内容等任务。</p>
+  </div>
+  
+  <p>
+   <input value="点击出现模态框" type="button" id="btnShow"/>
+  </p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>员工编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>个人简介</th>
+        <th>操作</th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>{{user.no}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.sex}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.about}}</td>
+        <td>
+        <a href="index.php?action=add">添加</a><a href="index.php?action=modify&userId={{user.id}}">修改</a><a href="index.php?action=del&userId={{user.id}}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

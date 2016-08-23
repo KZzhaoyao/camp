@@ -1,0 +1,10 @@
+<tr>
+    <td>{{user.no}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.sex}}</td>
+    <td>{{user.age}}</td>
+    <td>{{user.about}}</td>
+    <td><button class="btn btn-sm btn-primary pull-right update-user-btn" data-url="{{ path('user_update', {id:user.id}) }}" data-toggle="modal">修改</button>
+    <a type="button" data-url="{{ path('user_delete', {id:user.id}) }}" id="{{ user.id }}" href="javascript:;" class="del{{ user.id }} btn delete-btn btn-danger btn-sm">删除</a>
+    </td>
+</tr>

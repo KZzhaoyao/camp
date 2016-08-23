@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>baidu service js</title>
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<p class="p-btn">11</p>
+<button class="btn-btn">button</button>
+
+<button class="btn-btn1">button</button>
+</body>
+</html>
+ <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+ <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+   $(function(){
+    $('.btn-btn').on('click', function() {
+      $('.p-btn').text('some text');
+      });
+        $('.btn-btn1').on('click', function() {
+      $('.p-btn').html('<a href="#">123</a>');
+      });
+   });
+ </script>

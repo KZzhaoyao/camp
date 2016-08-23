@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>员工管理系统</title>
+   <link href="./css/bootstrap.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+<div style="overflow:hidden;margin-right:165px;">
+<h1 align="center">员工管理系统</h1>
+<button class="btn btn-sm btn-primary pull-right show-add-user" data-toggle="modal">
+   添加用户</button>
+</div>
+
+<div>
+<table align="center" class="table-hover">
+    <tr>
+        <th width="10%">员工编号</th>
+        <th width="20%">姓名</th>
+        <th width="20%">性别</th>
+        <th width="20%">年龄</th>
+        <th width="20%">个人简介</th>
+        <th width="10%">操作</th>
+    </tr>
+
+    {% for user in users %}
+    <tr height="35px;">
+        <td>{{user.no}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.sex}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.about}}</td>
+        <td><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal-{{ user.id }}">修改</button>
+        <a type="button" data-url="index.php?action=delete&userId={{ user.id }}" id="{{ user.id }}" href="javascript:;" class="del{{ user.id }} btn delete-btn btn-danger btn-sm">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<div class="modal" id="modal"></div>
+</body>
+</html>
+
+
+<script src="./js/jquery-2.2.1.min.js"></script>
+<script src="http:./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>

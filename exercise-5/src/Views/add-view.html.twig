@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户管理系统-添加</title>
+</head>
+<body>
+    <form id="add-user" acton="index.php?action=add" method="post">
+        <p>员工编号:
+            <input type="text" name="no" value=""></input>
+        </p>
+        <p>姓名:
+            <input type="text" name="name" value=""></input>
+        </p>
+        <p>性别:
+            <input name="sex" type="radio" value="男">男</input>
+            <input name="sex" type="radio" value="女">女</input>
+        </p>
+        <p>年龄:
+            <input type="text" name="age" value=""></input>
+        </p>
+        <p>简介:
+            <textarea name="about"></textarea>
+        </p>
+        <input id="submit-btn" type="button" value="Submit">
+    </form>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var $form = $('#add-user');
+    $('#submit-btn').on('click', function() {
+        $.post($form.attr('action'), $form.serialize(), function(data){
+        alert(data);
+    });
+    });
+});
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>111</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div class="nav">
+    <ul id='haha'>
+        <li><a href="#">和尚庙</a></li>
+        <li><a href="#">和尚庙</a></li>
+        <li><a href="#">和尚庙 <span class="hot">hot</span></a></li>
+        <li><a href="#">和尚庙</a></li>
+        <li><a href="#">和尚庙</a></li>
+        <li><a href="#">和尚庙</a></li>
+        <li><a href="#">和尚庙</a></li>
+        <li><a href="#">和尚庙</a></li>
+        <li class="dropmenu">
+            <a href="">...
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </a>
+        </li>
+        <li><input class="serach-button" type="text" ></input></li>
+        <li><button class="serach-button" type="submit" >搜索</button></li>
+    </ul>
+</div>
+<div>
+    <table border="1">
+        <caption>基友表</caption>
+        <thead class="table-head">
+            <tr>
+                <th onclick="">基友</th>
+                <th>基友</th>
+                <th>基友</th>
+                <th>基友</th>
+                <th>基友</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>lie</td>
+                <td>lie</td>
+                <td>lie</td>
+                <td>lie</td>
+                <td>lie</td>
+            </tr>
+            <tr>
+                <td>lie</td>
+                <td>lie</td>
+                <td>lie</td>
+                <td>lie</td>
+                <td>lie</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var $btn = $('#add-user');
+    // console.log($btn.attr('action'));
+    
+    
+    $.post($btn.attr('action'), function(u) {
+        console.log(u);
+        if (response.status == 'ok') {
+            $('#' + $btn.data('target')).remove();
+            Notify.success('删除模板成功!');
+        } else {
+            alert('服务器错误!');
+        }
+    }, 'json');
+});
+</script>
+</html>

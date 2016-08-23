@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>baidu service js</title>
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<ul>
+<li>
+  <p id="one">1</p>
+  <ul class="leve">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</li>
+<li>
+<p id="one">2</p>
+  <ul class="leve">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</li>
+<li>
+<p id="one">3</p>
+  <ul class="leve">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</li>
+</ul>
+</body>
+</html>
+ <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+ <script type="text/javascript">
+   $(function(){
+    // $('[id=one]').on('click', function() {
+    //       $(this).hide(1000);
+    //   });
+    $('[id=one]').on('click', function() {
+          
+          $('.leve').toggle(1000);
+      });
+    // $('#one').on('click', function(event) {
+    //         $(this).hide(1000);
+    // });
+   });
+ </script>

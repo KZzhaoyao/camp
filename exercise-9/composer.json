@@ -1,0 +1,21 @@
+{
+    "autoload": {
+        "psr-4": {"ZhaoYao\\UserSystem\\": "src/"}
+    },
+
+    "require": {
+        "monolog/monolog": "1.2.*",
+        "twig/twig" : "1.24.*"
+    },
+
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
+    
+        "require-dev": {
+            "phpunit/phpunit": "4.8.*"
+        }
+}

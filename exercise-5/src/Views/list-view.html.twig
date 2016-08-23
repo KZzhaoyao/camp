@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>员工编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>个人简介</th>
+        <th>操作</th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>{{user.no}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.sex}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.about}}</td>
+        <td>
+        <a href="index.php?action=add">添加</a><a href="index.php?action=update&userId={{user.id}}">修改</a><a class="delete-btn" data-url="index.php?action=delete&userId={{user.id}}" href="javascript:;">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('.delete-btn').on('click', function() {
+        if (!confirm('确认要删除该条数据吗？'))
+         return false;
+    $.get($('.delete-btn').data('url'), function(){
+        window.location.reload();
+    });
+    });
+});
+</script>
+</html>
